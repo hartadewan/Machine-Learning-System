@@ -1,9 +1,3 @@
-"""Export the pinned pip requirements declared in a conda.yaml file.
-
-The CI pipeline uses this script to install exactly the dependencies that the
-project's conda.yaml declares. ...
-"""
-
 from __future__ import annotations
 
 import argparse

@@ -1,0 +1,13 @@
+# MLflow Project descriptor (shown as "MLProject" in the Dicoding PDF tree).
+# MLflow looks the file up case-insensitively; this is the canonical name.
+name: credit-scoring-ci
+
+# Declared environment for `mlflow run` with conda. CI runs the same pins with
+# `--env-manager=local` after installing them from this file.
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    # Trains RandomForest on namadataset_preprocessing/{train,test}.csv with
+    # mlflow.sklearn.autolog(); the model is logged at artifact path "model".
+    command: "python modelling.py"

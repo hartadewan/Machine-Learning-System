@@ -1,4 +1,4 @@
-# Workflow-CI — Credit Scoring (Kriteria 3)
+# Workflow-CI — Credit Scoring
 
 On every push to `main` (or a manual run), GitHub Actions retrains the
 credit-scoring model through an **MLflow Project**, checks that the logged model
@@ -108,17 +108,14 @@ mlflow run MLProject --env-manager local                     # runs land in ./ml
 # or, with conda installed:  mlflow run MLProject
 ```
 
-`python MLProject/modelling.py` still logs to `http://127.0.0.1:5000/` (Kriteria 2
-behaviour) unless `MLFLOW_TRACKING_URI` is set.
+`python MLProject/modelling.py` still logs to `http://127.0.0.1:5000/` unless `MLFLOW_TRACKING_URI` is set.
 
 ## Data provenance
 
-`namadataset_preprocessing/` comes from the Kriteria 1 preprocessing (stratified
+`namadataset_preprocessing/` comes from the preprocessing (stratified
 80/20 split, `random_state=42`, StandardScaler + OneHotEncoder). SHA-256:
 
 ```
 9bf3a981d19766c03ee581e0c47b1a303a267698f0396a2ea39e98eb96e009a7  train.csv
 2b3a32c7e6166d180af4171e71a82e723300139ad3f5b2d07ed20a3e4ef3f54f  test.csv
 ```
-
-If your Kriteria 1 output has different checksums, replace both files with yours.

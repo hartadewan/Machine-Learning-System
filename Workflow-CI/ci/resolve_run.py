@@ -1,9 +1,3 @@
-"""Resolve the single MLflow run produced by this CI build and export its facts.
-
-Intended to run immediately after `mlflow run` inside a GitHub Actions job whose
-tracking store is fresh. ...
-"""
-
 from __future__ import annotations
 
 import argparse

@@ -1,0 +1,15 @@
+# Grafana data source provisioning: Prometheus on the compose network.
+# The fixed uid "prometheus-local" is referenced by the dashboard and the alert rules.
+apiVersion: 1
+
+datasources:
+  - name: Prometheus
+    uid: prometheus-local
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: false
+    jsonData:
+      httpMethod: POST
+      timeInterval: 5s   # equals the Prometheus scrape_interval

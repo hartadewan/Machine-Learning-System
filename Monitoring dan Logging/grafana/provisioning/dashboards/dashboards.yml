@@ -1,0 +1,15 @@
+# Grafana dashboard provider. The dashboard JSON in ./json is rendered by
+# `python -m monitoring_app.prepare` (title = DICODING_USERNAME).
+apiVersion: 1
+
+providers:
+  - name: credit-scoring-monitoring
+    orgId: 1
+    folder: Credit Scoring Monitoring
+    type: file
+    disableDeletion: true
+    allowUiUpdates: false
+    updateIntervalSeconds: 30
+    options:
+      path: /etc/grafana/provisioning/dashboards/json
+      foldersFromFilesStructure: false

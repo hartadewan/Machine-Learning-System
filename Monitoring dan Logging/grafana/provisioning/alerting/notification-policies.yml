@@ -1,0 +1,11 @@
+# Grafana notification policy tree (replaces the default root policy).
+# All alerts route to the local webhook receiver; one notification group per alert rule.
+apiVersion: 1
+
+policies:
+  - orgId: 1
+    receiver: local-webhook-receiver
+    group_by: ["grafana_folder", "alertname"]
+    group_wait: 10s
+    group_interval: 30s
+    repeat_interval: 4h
